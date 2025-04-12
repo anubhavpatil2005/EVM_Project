@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.evm-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 500px;
+    text-align: center;
+}
+
+.evm-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #4C6A92;
+    margin-bottom: 20px;
+}
+
+.vote-options {
+    margin-bottom: 30px;
+}
+
+.evm-btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.evm-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-4px);
+}
+
+.evm-btn:active {
+    transform: translateY(2px);
+}
+
+.vote-results {
+    margin-top: 30px;
+}
+
+.results-container {
+    margin-top: 20px;
+}
+
+.result-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result-item span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 80%;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    height: 25px;
+    margin-top: 5px;
+    position: relative;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-bar span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.graph-container {
+    margin-top: 30px;
+    display: none;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding-top: 60px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: green;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Password Modal Styling */
+#passwordModal .modal-content {
+    background-color: #fff5e6;
+    border: 2px solid #ff9800;
+}
+
+#passwordModal input {
+    border: 2px solid #ff9800;
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#passwordModal button {
+    background-color: #ff9800;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+#passwordModal button:hover {
+    background-color: #e68900;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .evm-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .evm-btn {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .result-item span {
+        font-size: 16px;
+    }
+
+    .progress-bar {
+        height: 20px;
+    }
+}
+/* Modal Styles for Roll Number and Password */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding-top: 60px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fff5e6;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid #ff9800;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: green;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Roll Number Modal Styles */
+#rollNumberModal .modal-content {
+    background-color: #fff5e6;
+    border: 2px solid #ff9800;
+}
+
+#rollNumberModal input {
+    border: 2px solid #ff9800;
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#rollNumberModal button {
+    background-color: #ff9800;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+#rollNumberModal button:hover {
+    background-color: #e68900;
+}
+
+/* Password Modal Styling */
+#passwordModal .modal-content {
+    background-color: #fff5e6;
+    border: 2px solid #ff9800;
+}
+
+#passwordModal input {
+    border: 2px solid #ff9800;
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#passwordModal button {
+    background-color: #ff9800;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+#passwordModal button:hover {
+    background-color: #e68900;
+}
+
+/* General Modal Text */
+#rollNumberModal h2,
+#passwordModal h2 {
+    font-size: 18px;
+    color: #ff9800;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .evm-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .evm-btn {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .result-item span {
+        font-size: 16px;
+    }
+
+    .progress-bar {
+        height: 20px;
+    }
+}
+button.evm-btn.reset {
+    background-color: #dc3545;
+    color: white;
+  }
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voting System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="evm-container">
+    <h1>Electronic Voting Machine</h1>
+    <div class="options">
+      <button class="evm-btn" onclick="askForRollNumber('option1')">Option 1</button>
+      <button class="evm-btn" onclick="askForRollNumber('option2')">Option 2</button>
+      <button class="evm-btn" onclick="askForRollNumber('option3')">Option 3</button>
+    </div>
+
+    <div class="button-group">
+      <button class="evm-btn" onclick="askForPassword(false)">Show Graph</button>
+      <button class="evm-btn reset" onclick="askForPassword(true)">Reset Voting</button>
+    </div>
+
+    <p id="message"></p>
+
+    <div id="graph-container" style="display:none;">
+      <canvas id="voteGraph" width="400" height="200"></canvas>
+      <div id="result-option1">Option 1 Votes: <span id="option1-votes">0</span></div>
+      <div id="result-option2">Option 2 Votes: <span id="option2-votes">0</span></div>
+      <div id="result-option3">Option 3 Votes: <span id="option3-votes">0</span></div>
+    </div>
+  </div>
+
+  <!-- Roll Number Modal -->
+  <div id="rollNumberModal" class="modal">
+    <div class="modal-content">
+      <h3>Enter Roll Number</h3>
+      <input type="text" id="rollNumberInput" placeholder="Your Roll Number" />
+      <p id="error-message"></p>
+      <button onclick="submitRollNumber()">Submit</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Password Modal -->
+  <div id="passwordModal" class="modal" data-reset="false">
+    <div class="modal-content">
+      <h3>Enter Admin Password</h3>
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <p id="password-error-message"></p>
+      <button onclick="submitPassword()">Submit</button>
+      <button onclick="closePasswordModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
